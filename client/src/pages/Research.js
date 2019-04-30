@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Scrape from "../components/Scrape";
-import Wiki from "../components/Wiki";
+import Wiki from "../components/WikiBtn";
+import Results from "../components/Results"
 
  
 class Research extends Component {
@@ -14,8 +15,17 @@ class Research extends Component {
   }
 
   handleBtnClick = event => {
+    event.preventDefault();
     
   };
+
+  handleInputChange = event => {
+
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+  }
 
   loadResults = () => {
     
@@ -28,9 +38,20 @@ class Research extends Component {
         
         {/* <Scrape />
         
-        <Wiki/> 
+        <Input />
+        <WikiBtn/> 
         
-        <Results/> */}
+        <Results/> 
+        
+        <SaveArticleBtn />
+        <SaveNoteBtn />
+        <ReadNotesBtn />
+
+        <ArticleModal />
+        <LeaveNotesModal />
+        <ReadNotesModal />
+
+        */}
       </div>
     );
   }

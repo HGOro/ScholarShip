@@ -12,10 +12,11 @@ class SavedResearch extends Component {
   }
 
   handleBtnClick = event => {
+   event.preventDefault();
     
   };
 
-  loadResults = () => {
+  loadSavedResults = () => {
     
   };
 
@@ -24,7 +25,11 @@ class SavedResearch extends Component {
       <div>
         <h1 className="text-center">My Project Saved</h1>
         
-        {/* <SavedResults/> */}
+        {/* <SavedResults/> 
+         <ReadNotesBtn />
+         <ReadNotesModal />
+         
+         */}
         
       
       </div>
