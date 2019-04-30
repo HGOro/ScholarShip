@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Elementary from "./pages/Elementary";
 import Research from "./pages/Research";
+import SavedResearch from "./pages/SavedResearch";
 import User from "./pages/User";
 
 function App() {

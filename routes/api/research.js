@@ -1,16 +1,14 @@
-const router = require("express").Router();
-const researchController = require("../../controllers/researchController");
+var express = require('express');
+var router = express.Router();
+var articleController = require("../controllers/articleController")
 
-// Matches with "/api/research"
-router.route("/")
-  .get(researchController.findAll)
-  .post(researchController.create);
-
-// Matches with "/api/research/:id"
-router
-  .route("/:id")
-  .get(researchController.findById)
-  .put(researchController.update)
-  .delete(researchController.remove);
+// api routes with /article/ ... 
+router.get("/scrape", articleController.scrapeArticles);
+router.get("/all", articleController.all);
+router.post("/wiki", articleController.wikiSearch);
+router.get("/wiki/all", articleController.wikiAll)
+router.get("/readComment/:id", articleController.readComment);
+router.post("/saveArticle/:id", articleController.saveArticle)
+router.post("/saveComment/:id", articleController.saveComment)
 
 module.exports = router;

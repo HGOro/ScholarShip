@@ -1,4 +1,6 @@
 module.exports = {
-    Research: require("./research"),
-    Quiz: require("./quiz")
-  };
+   Article: require("./Article"),
+   Wiki: require("./Wiki"),
+   SavedArticles: require("./SavedArticles")
+ };
+ 
