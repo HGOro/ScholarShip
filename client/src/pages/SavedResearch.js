@@ -3,6 +3,7 @@ import React, { Component } from "react";
  
 class SavedResearch extends Component {
   state = {
+    results: []
     
   };
 
@@ -25,9 +26,11 @@ class SavedResearch extends Component {
       <div>
         <h1 className="text-center">My Project Saved</h1>
         
-        {/* <SavedResults/> 
-         <ReadNotesBtn />
-         <ReadNotesModal />
+        {/* <SavedResults
+          <ReadNotesBtn />
+          <ReadNotesModal />
+        
+        /> 
          
          */}
         

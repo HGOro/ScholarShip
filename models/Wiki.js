@@ -1,3 +1,7 @@
+var mongoose = require("mongoose");
+
+var Schema = mongoose.Schema;
+
 var WikiSchema = new Schema({
   
    title: {
@@ -12,7 +16,18 @@ var WikiSchema = new Schema({
  
    pageid: {
      type: String
-   }
+   },
+
+   comments: {
+    type: [String]
+
+  },
+
+  date: {
+    type : Date, 
+    default: Date.now 
+  }
+  
  });
  
  var Wiki = mongoose.model("Wiki", WikiSchema);

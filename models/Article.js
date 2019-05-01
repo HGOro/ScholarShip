@@ -11,7 +11,8 @@ var ArticleSchema = new Schema({
   
   href: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
 
   comments: {
@@ -22,9 +23,12 @@ var ArticleSchema = new Schema({
   date: {
     type : Date, 
     default: Date.now 
+  },
+
+  isSave: {
+    type: Boolean,
+    default: false
   }
-
-
 });
 
 var Article = mongoose.model("Article", ArticleSchema);
