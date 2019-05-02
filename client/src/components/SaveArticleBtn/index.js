@@ -3,8 +3,12 @@ import "./style.css";
 
 function SaveArticleBtn(props) {
   return (
-     <div></div>
-   );
+    <div>
+      <button onClick={ (e)=>props.clickHandler(e, props.articleId) }>Save Article</button>
+    </div>
+  );
 }
+
+
 
 export default SaveArticleBtn;

@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Elementary from "./pages/Elementary";
 import Research from "./pages/Research";
-import SavedResearch from "./pages/SavedResearch";
+import MyProject from "./pages/MyProject";
 import User from "./pages/User";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/elementary" component={Elementary} />
         <Route exact path="/research" component={Research} />
+        <Route exact path="/myproject" component={MyProject} />
         <Route path="/user" component={User} />
       </div>
     </Router>
