@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Scrape from "../components/Scrape";
 // import Wiki from "../components/WikiBtn";
-// import Results from "../components/Results"
+//import Input from "../components/Input"
 import SaveArticleBtn from "../components/SaveArticleBtn";
 import SaveNotesBtn from "../components/SaveNotesBtn";
 //import ReadNotesBtn from "../components/ReadNotesBtn"
@@ -67,6 +67,17 @@ class Research extends Component {
       }) 
     })
   }
+
+  handleSaveNotesBtnClick = async (event, articleId)=> {
+    event.preventDefault();
+    console.log("Save Notes Clicked", articleId);
+    this.saveNotesData(event, articleId);
+  }
+
+  saveNotesData = async (articleId) => {
+
+
+  }
   
 
   render() {
@@ -92,8 +103,7 @@ class Research extends Component {
 
                 {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
 
-                {/* <SaveArticleBtn articleId={result._id} /> */}
-                <SaveNotesBtn  />
+                <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} />
                 
             </div>
           )

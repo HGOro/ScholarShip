@@ -1,14 +1,16 @@
 import React from "react";
 import "./style.css";
+import Input from "../Input"
 
-//handleBtnClick
+//handleInput
 
 
 function SaveNotesBtn(props) {
   return (
      <div>
-       <input className="inputNotes"></input>
-       <button className="submitNotes">Save Notes</button>
+       <p>Notes:<input></input></p>
+       {/* <Input /> */}
+       <button onClick={ (e)=>props.clickHandler(e, props.articleId) }>Save</button>
      </div>
 
     

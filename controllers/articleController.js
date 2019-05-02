@@ -73,6 +73,19 @@ exports.readComment = async function (req, res) {
 }
 
 
+exports.readArticles = async function (req, res) {
+   let toread
+   try {
+      toread = await Article.findAll({ isSave: true });
+      res.json(toread);
+   } catch (e) {
+      res.send(e)
+   }
+}
+
+
+
+
 exports.scrapeArticles = async function (req, res) {
    try {
       var response = await axios.get("https://newsforkids.net/");
