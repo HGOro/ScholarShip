@@ -30,20 +30,21 @@ exports.wikiAll = async function (req, res) {
 
 
 exports.saveArticle = async function (req, res) {
-   let article
-   console.log(req.params)
-   //res.send("ok saveArticle")
+   console.log('inside save article', req.params)
+   // res.json({message: 'ok'})
    try {
-      article = await Article.findById(req.params.id)
-      
-      const savedArticle = new SavedArticles({
-         title: article.title,
-         href: article.href
-      });
-      const savedArtResult = await savedArticle.save()
-      res.json(savedArtResult);
+      var article = await db.Article.findOneAndUpdate({ _id: req.params.id }, { $set: { isSave: true } }, { new: true })
+      res.json(article)
+      console.log('article', article)
+
+      // const savedArticle = db.Article({
+      //    isSave: true
+      // });
+      // const savedArtResult = await savedArticle.save()
+      // res.json(savedArtResult);
    } catch (e) {
       res.send(e);
+      console.log("inside save article", e)
    }
 }
 
@@ -73,47 +74,44 @@ exports.readComment = async function (req, res) {
 
 
 exports.scrapeArticles = async function (req, res) {
-   console.log("Im hit");
    try {
       var response = await axios.get("https://newsforkids.net/");
+      console.log("scrapeArticles axios")
    } catch (e) {
-      console.log("error", e)
+      console.log("scrapeArticles axios error")
       return res.send(e)
    }
 
    var $ = cheerio.load(response.data);
 
-   try {
-      var promises = []
+   var promises = []
+   $('article').each(function (i, element) {
+      var title = ($(this).find('h2.post-title').find('a').text());
+      var href = ($(this).find('h2.post-title').find('a').attr('href'));
 
-      $('article').each(async function (i, element) {
-         var title = ($(this).find('h2.post-title').find('a').text());
-         var href = ($(this).find('h2.post-title').find('a').attr('href'));
-
-         article = db.Article.findOneAndUpdate(
-            { href: href },
+      var promise = db.Article.findOneAndUpdate(
+         { href: href },
+         {
+            $set:
             {
-               $set:
-               {
-                  title: title,
-                  href: href
-               }
-            },
-            { upsert: true }
-         )
-         promises.push(article)
-         console.log(article);
-      })
-      Promise.all(promises)
-         .then(result => {
-            console.log(result)
-            res.json({ result })
-         })
+               title: title,
+               href: href
+            }
+         },
+         { upsert: true, setDefaultsOnInsert: true, new: true }
+      )
+      // console.log("scrapeArticles result from findOneAndUpdate", promise ) // this won't show the result but the promise
+      promises.push(promise)
+   })
 
-      //res.json( await db.Article.find({}) );
-   } catch (e) {
-      res.send(e);
-   }
+   Promise.all(promises)
+      .then(result => {
+         //console.log("result from Promise.all", result)
+         res.json({ result })
+      })
+      .catch(e => {
+         console.log("scrapeArticles Promise.all error")
+      })
 }
 
 exports.wikiSearch = async function (req, res) {

@@ -7,10 +7,11 @@ import "./style.css";
 function SaveNotesBtn(props) {
   return (
      <div>
-       <button >Save Notes</button>
+       <input className="inputNotes"></input>
+       <button className="submitNotes">Save Notes</button>
      </div>
 
-     //Save Notes Modal Here
+    
    );
 }
 

@@ -27,6 +27,15 @@ function Navbar() {
       </li>
       <li className="nav-item">
         <Link
+          to="/myproject"
+          className={window.location.pathname === "/user" ? "nav-link active" : "nav-link"}
+        >
+          My Project
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
           to="/user"
           className={window.location.pathname === "/user" ? "nav-link active" : "nav-link"}
         >
