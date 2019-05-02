@@ -5,21 +5,17 @@ import "./style.css";
 const handleBtnClick = async (event, articleId) => {
   event.preventDefault();
   console.log("Save Article Clicked", articleId);
+  postData(articleId)
 };
 
-const postData = (articleId) => {
-  //  post("http://localhost:3001/api/research/saveArticle/:id", {
-  //    method: "POST",
-  //    data: {
-  //       title: title,
-  //       href: href
-  //     }).then(function(req, res){
-      
-  //       )
-
-  //    }
-
-  
+const postData = async (articleId) => {
+  fetch(`http://localhost:3001/api/research/savearticle/${articleId}`, {
+    method: "POST",
+  })
+  .then( r => r.json() )
+  .then( function(data){
+    console.log(data)
+  })
 }
 
 
@@ -27,6 +23,8 @@ function SaveArticleBtn(props) {
   return (
     <div>
       <button onClick={(e)=>handleBtnClick(e, props.articleId)}>Save Article</button>
+
+      {/* //Article Modal Here */}
     </div>
   );
 }

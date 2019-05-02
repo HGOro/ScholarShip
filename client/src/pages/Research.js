@@ -86,8 +86,8 @@ class Research extends Component {
                 <button className="leaveNote">Leave Note</button>
                 <button className="readNotes">Read Notes</button> */}
                 <SaveArticleBtn articleId={result._id} />
-                <SaveNotesBtn />
-                <ReadNotesBtn />
+                <SaveNotesBtn articleId={result._id} />
+                <ReadNotesBtn articleId={result._id} />
             </div>
           )
         })}
