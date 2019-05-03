@@ -2,6 +2,8 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
+var Comment = new Schema({comment: String })
+
 var ArticleSchema = new Schema({
  
   title: {
@@ -16,7 +18,7 @@ var ArticleSchema = new Schema({
   },
 
   comments: {
-    type: [String]
+    type: [Comment]
 
   },
 
