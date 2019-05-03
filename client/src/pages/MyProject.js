@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import SavedResults from "../components/SavedResults"
-import ReadNotesBtn from "../components/ReadNotesBtn"
+// import ReadNotesBtn from "../components/ReadNotesBtn"
  
 class MyProject extends Component {
   state = {
