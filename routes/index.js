@@ -1,9 +1,13 @@
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
+const passportRoutes = require("./passport/passport");
 
 // API Routes
 router.use("/api", apiRoutes);
+
+//PASSPORT Routes
+router.use("/", passportRoutes);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
