@@ -6,7 +6,7 @@ import styled from "styled-components"
 const Div = styled.div`
   border: 2px solid black;
   background: lightgray;
-  width: 400px;
+  width: 600px;
   height: auto;
   margin: 20px;
   padding: 15px;
@@ -15,16 +15,40 @@ const Div = styled.div`
   font-family: Georgia, Times, "Times New Roman", serif; 
 `
 
+const IFrameDiv = styled.div`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
+
 const ArticleEach = (props) => (
   <Div>
-    <p >
-      <a href={props.result.href} target="_blank" rel="noopener noreferrer">{props.result.title}</a>
-    </p>
+    <IFrameDiv>
+      <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="500"
+        height="200"
+        src={props.result.href}>
+      </iframe>
+      <div><a href={props.result.href} target="_blank" rel="noopener noreferrer">{props.result.title}</a></div>
+    </IFrameDiv>
+
+    <div>
+    {
+      // (props.result.comments) &&
+      // (props.result.comments.length) &&
+      props.result.comments.map(comment => (
+        <p>{comment.comment}</p>
+      ))
+    }
+    </div>
 
     {
-      props.result.isSave ? 
-        <SaveNotesBtn articleId={props.result._id} saveNotesHandler={props.saveNotesHandler} /> 
-      : 
+      props.result.isSave ?
+        <SaveNotesBtn articleId={props.result._id} saveNotesHandler={props.saveNotesHandler} />
+        :
         <SaveArticleBtn clickHandler={props.clickHandler} articleId={props.result._id} />
     }
 
