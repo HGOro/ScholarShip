@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Scrape from "../components/Scrape";
 // import Wiki from "../components/WikiBtn";
-//import Input from "../components/Input"
+// import Input from "../components/Input"
 import SaveArticleBtn from "../components/SaveArticleBtn";
 import SaveNotesBtn from "../components/SaveNotesBtn";
 //import ReadNotesBtn from "../components/ReadNotesBtn"
@@ -20,7 +20,6 @@ class Research extends Component {
   handleScrapeBtnClick = async event => {
     event.preventDefault();
     this.fetchScrapeData();
-     
   };
 
   fetchScrapeData = () => {
@@ -41,10 +40,9 @@ class Research extends Component {
     .catch((error) => {
       console.log(error, "catch the hoop")
     })
-    
   }
 
- handleSaveArticleBtnClick = async (event, articleId) => {
+  handleSaveArticleBtnClick = async (event, articleId) => {
     event.preventDefault();
     console.log("Save Article Clicked", articleId);
     this.saveArticleData(articleId)
@@ -56,7 +54,7 @@ class Research extends Component {
     })
     .then( r => r.json() )
     .then( data => {
-      console.log("saveArticleData result", data)
+      console.log("saveA rticleData result", data)
       console.log("saveArticleData state",this.state)
 
       this.setState({
@@ -76,11 +74,11 @@ class Research extends Component {
     this.saveNotesData(event, articleId);
   }
 
-  saveNotesData = async (articleId) => {
-    fetch(`http://localhost:3001/api/research/saveComment/${articleId}`), {
-      method: "POST",
+  // saveNotesData = async (articleId) => {
+  //   fetch(`http://localhost:3001/api/research/saveComment/${articleId}`), {
+  //     method: "POST",
 
-  }
+  // }
   
 
   render() {
@@ -100,9 +98,9 @@ class Research extends Component {
         {this.state.results.map( result => {
           return (
             
-            <div> 
-              <p >{result.title}
-                <a href={result.href} target="_blank">Read</a>
+            <div key={result._id}> 
+              <p >
+                <a href={result.href} target="_blank" rel="noopener noreferrer">{result.title}</a>
               </p>
 
               {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
@@ -112,16 +110,9 @@ class Research extends Component {
             </div>
           )
         })}
-
-
-        
         {/*
-        
         <Input />
         <WikiBtn/> 
-        
-      
-      
         */}
       </div>
     );
