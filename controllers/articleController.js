@@ -49,16 +49,17 @@ exports.saveArticle = async function (req, res) {
 }
 
 exports.saveComment = async function (req, res) {
+   console.log("saveComment")
    console.log(req.body)
-   console.log(req.params)
+   console.log(req.params.id)
 
-   try {
-      const comment = await Article.findByIdAndUpdate(req.params.id, { "$push": { comments: req.body.comment } })
-      console.log(comment)
-      res.send('ok')
-   } catch (e) {
-      res.send(e);
-   }
+   // try {
+   //    const comment = await Article.findByIdAndUpdate(req.params.id, { "$push": { comments: req.body.comment } })
+   //    console.log(comment)
+   //    res.send('ok')
+   // } catch (e) {
+   //    res.send(e);
+   // }
 }
 
 exports.readComment = async function (req, res) {

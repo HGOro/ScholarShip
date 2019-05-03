@@ -1,17 +1,35 @@
-import React from "react";
-import "./style.css";
-// import Input from "../Input"
+import React, { useState } from 'react';
+import styled from "styled-components"
 
-//handleInput
+const Div = styled.div`
+  font-size: 16px;
+  font-family: Georgia, Times, "Times New Roman", serif; 
+`
 
+const SaveNotesBtn = (props) => {
+  const [input, setInput] = useState("");  
 
-function SaveNotesBtn(props) {
+  const clickHandler = (e) => {
+    // console.log(props.articleId)
+    props.saveNotesHandler(e, props.articleId, input)
+    setInput("")
+  }
+  
   return (
-     <div>
-       <p>Notes:<input></input></p>
-       {/* <Input /> */}
-       <button onClick={ (e)=>props.clickHandler(e, props.articleId) }>Save Notes</button>
-     </div>
+     <Div>
+      <label htmlFor="notes">Notes: </label>
+
+      <textarea 
+        id="notes" 
+        name="notes" 
+        onChange={e => setInput(e.target.value)} 
+        value={input}
+        rows="3"
+        cols="35"
+      />
+
+       <button onClick={clickHandler}>Save Notes</button>
+     </Div>
 
     
    );

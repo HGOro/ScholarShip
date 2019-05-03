@@ -9,7 +9,7 @@ router.post("/wiki", articleController.wikiSearch);
 router.get("/wiki/all", articleController.wikiAll)
 router.get("/readComment/:id", articleController.readComment);
 router.post("/savearticle/:id", articleController.saveArticle);
-router.post("/saveComment/:id", articleController.saveComment);
+router.post("/savecomment/:id", articleController.saveComment);
 router.get("/readarticles/", articleController.readArticles)
 
 module.exports = router;
