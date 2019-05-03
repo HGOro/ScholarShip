@@ -4,7 +4,6 @@ const Article = require("../models/Article")
 const db = require("../models")
 const Wiki = require("../models/Wiki")
 
-
 exports.all = async function (req, res) {
    try {
       const articles = await db.Article.find({})
@@ -53,13 +52,24 @@ exports.saveComment = async function (req, res) {
    console.log(req.body)
    console.log(req.params.id)
 
-   // try {
-   //    const comment = await Article.findByIdAndUpdate(req.params.id, { "$push": { comments: req.body.comment } })
-   //    console.log(comment)
-   //    res.send('ok')
-   // } catch (e) {
-   //    res.send(e);
-   // }
+   try {
+      var article = await db.Article.findOneAndUpdate(
+         { _id: req.params.id }, 
+         { $push: 
+            { 
+               comments: {
+                  comment: req.body.notes 
+               }
+            } 
+         },
+         { new: true }
+      )
+      res.json(article)
+      console.log('article', article)
+   } catch (e) {
+      res.send(e);
+      console.log("inside save article", e)
+   }
 }
 
 exports.readComment = async function (req, res) {
