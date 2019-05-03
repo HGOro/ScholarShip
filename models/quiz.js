@@ -1,12 +1,65 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+var Sequelize = require("sequelize");
 
-const quizSchema = new Schema({
-  user: { type: String, required: true },
-  score: String,
-  date: { type: Date, default: Date.now }
-});
+module.exports = function(sequelize, DataTypes) {
+    var Quiz = sequelize.define("Quiz", {
 
-const Quiz = mongoose.model("Quiz", quizSchema);
+        uuid: {
+          primaryKey: true,
+          type: DataTypes.UUID,
+          defaultValue: DataTypes.UUIDV4,
+          isUnique :true
+        },
+        quiz_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { 
+                min:1,
+                notEmpty:true
+            }
+        },
+        subject: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                is:["^[a-z]+$",'i'],
+                min:1,
+                notEmpty:true
+            }
+        },
+        score: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                min:1,
+                notEmpty:true
+            }
+        },
+        total_time: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { 
+                min:1,
+                notEmpty:true
+            }
+        },
+        completed: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE
 
-module.exports = Quiz;
+    });
+
+    // accociations ======================
+
+    Quiz.associate = function(models){
+        Quiz.belongsTo(models.User, {
+            foreignKey: "userUUID",
+            onDelete: 'cascade'
+        });
+    };
+
+    return Quiz;
+}
+
