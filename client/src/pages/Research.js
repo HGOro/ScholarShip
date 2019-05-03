@@ -19,7 +19,8 @@ class Research extends Component {
 
   handleScrapeBtnClick = async event => {
     event.preventDefault();
-    this.fetchScrapeData()    
+    this.fetchScrapeData();
+     
   };
 
   fetchScrapeData = () => {
@@ -40,6 +41,7 @@ class Research extends Component {
     .catch((error) => {
       console.log(error, "catch the hoop")
     })
+    
   }
 
  handleSaveArticleBtnClick = async (event, articleId) => {
@@ -75,7 +77,8 @@ class Research extends Component {
   }
 
   saveNotesData = async (articleId) => {
-
+    fetch(`http://localhost:3001/api/research/saveComment/${articleId}`), {
+      method: "POST",
 
   }
   
@@ -96,14 +99,15 @@ class Research extends Component {
         
         {this.state.results.map( result => {
           return (
-              <div key={result._id} >
-                <p >{result.title}
-                  <a href={result.href} target="_blank">Read</a>
-                </p>
+            
+            <div> 
+              <p >{result.title}
+                <a href={result.href} target="_blank">Read</a>
+              </p>
 
-                {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
+              {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
 
-                <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} />
+              <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} />
                 
             </div>
           )
@@ -116,16 +120,7 @@ class Research extends Component {
         <Input />
         <WikiBtn/> 
         
-        <Results
-          <SaveArticleBtn />
-          <SaveNoteBtn />
-          <ReadNotesBtn />
-
-          <ArticleModal />
-          <LeaveNotesModal />
-          <ReadNotesModal />
-        
-        /> 
+      
       
         */}
       </div>

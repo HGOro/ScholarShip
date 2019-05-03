@@ -10,7 +10,7 @@ function SaveNotesBtn(props) {
      <div>
        <p>Notes:<input></input></p>
        {/* <Input /> */}
-       <button onClick={ (e)=>props.clickHandler(e, props.articleId) }>Save</button>
+       <button onClick={ (e)=>props.clickHandler(e, props.articleId) }>Save Notes</button>
      </div>
 
     
