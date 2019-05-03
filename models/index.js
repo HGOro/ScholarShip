@@ -1,11 +1,4 @@
-module.exports = {
-   Article: require("./Article"),
-   Wiki: require("./Wiki"),
-   SavedArticles: require("./SavedArticles"),
-   db
- };
- 
- 'use strict';
+'use strict';
 
  var fs = require("fs");
  var path = require("path");
@@ -43,5 +36,10 @@ module.exports = {
  
  db.sequelize = sequelize;
  db.sequelize = sequelize;
- 
- module.exports = db;
+
+module.exports = {
+  Article: require("./Article"),
+  Wiki: require("./Wiki"),
+  SavedArticles: require("./SavedArticles"),
+  db
+};
