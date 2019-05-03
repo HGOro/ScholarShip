@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Scrape from "../components/Scrape";
 // import Wiki from "../components/WikiBtn";
-//import Input from "../components/Input"
+// import Input from "../components/Input"
 import SaveArticleBtn from "../components/SaveArticleBtn";
 import SaveNotesBtn from "../components/SaveNotesBtn";
 //import ReadNotesBtn from "../components/ReadNotesBtn"
@@ -19,7 +19,7 @@ class Research extends Component {
 
   handleScrapeBtnClick = async event => {
     event.preventDefault();
-    this.fetchScrapeData()    
+    this.fetchScrapeData();
   };
 
   fetchScrapeData = () => {
@@ -42,7 +42,7 @@ class Research extends Component {
     })
   }
 
- handleSaveArticleBtnClick = async (event, articleId) => {
+  handleSaveArticleBtnClick = async (event, articleId) => {
     event.preventDefault();
     console.log("Save Article Clicked", articleId);
     this.saveArticleData(articleId)
@@ -54,7 +54,7 @@ class Research extends Component {
     })
     .then( r => r.json() )
     .then( data => {
-      console.log("saveArticleData result", data)
+      console.log("saveA rticleData result", data)
       console.log("saveArticleData state",this.state)
 
       this.setState({
@@ -74,10 +74,11 @@ class Research extends Component {
     this.saveNotesData(event, articleId);
   }
 
-  saveNotesData = async (articleId) => {
+  // saveNotesData = async (articleId) => {
+  //   fetch(`http://localhost:3001/api/research/saveComment/${articleId}`), {
+  //     method: "POST",
 
-
-  }
+  // }
   
 
   render() {
@@ -96,37 +97,22 @@ class Research extends Component {
         
         {this.state.results.map( result => {
           return (
-              <div key={result._id} >
-                <p >{result.title}
-                  <a href={result.href} target="_blank">Read</a>
-                </p>
+            
+            <div key={result._id}> 
+              <p >
+                <a href={result.href} target="_blank" rel="noopener noreferrer">{result.title}</a>
+              </p>
 
-                {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
+              {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
 
-                <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} />
+              <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} />
                 
             </div>
           )
         })}
-
-
-        
         {/*
-        
         <Input />
         <WikiBtn/> 
-        
-        <Results
-          <SaveArticleBtn />
-          <SaveNoteBtn />
-          <ReadNotesBtn />
-
-          <ArticleModal />
-          <LeaveNotesModal />
-          <ReadNotesModal />
-        
-        /> 
-      
         */}
       </div>
     );

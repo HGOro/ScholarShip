@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import SavedResults from "../components/SavedResults"
-import ReadNotesBtn from "../components/ReadNotesBtn"
+// import ReadNotesBtn from "../components/ReadNotesBtn"
  
 class MyProject extends Component {
   state = {
@@ -48,26 +48,23 @@ class MyProject extends Component {
         
         <button onClick={this.handleViewMaterialsBtnClick}>View Saved Materials</button>
         
-        {this.state.results.map( result => {
+        {/* {this.state.results.map( result => {
           return (
-              <div key={result._id} >
-                <p >{result.title}
-                  <a href={result.href} target="_blank">Read</a>
-                  {result.comments}
-                </p>
+          //  <div key={result._id} >
+          //        <p >{result.title}
+          //          <a href={result.href} target="_blank">Read</a>
+          //          {result.comments}
+          //        </p>
 
-                {/* {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
+          //       {/* {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
 
-                <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} /> */}
-                
-            </div>
-          )
-        })}
+          //       <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} /> */}
+        
        
       
+    
       </div>
-    );
-  }
-}
+    )
+}}
 
 export default MyProject;
