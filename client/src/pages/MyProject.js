@@ -16,10 +16,25 @@ const Button = styled.button`
   margin: 10px;
 `
 
+const H3 = styled.h3`
+  font-family: 'Wendy One', sans-serif;
+  padding: 6px;
+  font-size: 22px;
+  margin-left: 5px;
+`
+
 const P = styled.p`
   font-family: 'Wendy One', sans-serif;
-  padding: 4px;
+  padding: 6px;
   font-size: 22px;
+  margin-left: 8px;
+`
+
+const A = styled.a`
+  font-family: 'Wendy One', sans-serif;
+  padding: 9px;
+  font-size: 24px;
+  margin-left: 5px;
 `
 
 
@@ -70,16 +85,16 @@ class MyProject extends Component {
         {this.state.results.map(result => {
           return (
             <div key={result._id} >
-              <P>{result.title}
-                <a href={result.href} target="_blank">Read</a>
+              <H3>{result.title}
+                <A href={result.href} target="_blank">Read</A>
                 {result.comments.map(
                   comment => {
                     return (
-                      <p>{comment.comment}</p>
+                      <P>{comment.comment}</P>
                     )
                   }
                 )}
-              </P>
+              </H3>
             </div>
 
           )

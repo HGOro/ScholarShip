@@ -11,8 +11,8 @@ const Div = styled.div`
   margin: 20px;
   padding: 15px;
   overflow: scroll;
-  font-size: 16px;
-  font-family: Georgia, Times, "Times New Roman", serif; 
+  font-size: 18px;
+  font-family: 'Wendy One', sans-serif;
 `
 
 const IFrameDiv = styled.div`
