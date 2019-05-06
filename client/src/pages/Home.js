@@ -1,3 +1,7 @@
+
+import React, { Component } from "react";
+import Main from "../components/Main"
+
 // import React, { Component } from 'react';
 // import './Home.css'
 
@@ -126,12 +130,15 @@
 
 import React from "react";
 
-function Home() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  );
+
+class Home extends Component {
+  render () {
+    return (
+      <div>
+        <Main />
+      </div>
+  )
+}
 }
 
 export default Home;
