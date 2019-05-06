@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./logo.png";
+
 
 function Navbar() {
   return (
+    <div>
+
     <ul className="nav nav-tabs">
       
       <li className="nav-item">
@@ -10,10 +14,16 @@ function Navbar() {
           Home
         </Link>
       </li>
+
+      <li className="nav-item">
+        <Link to="/login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
+          Log In
+        </Link>
+      </li>
       
       <li className="nav-item">
-        <Link to="/elementary" className={window.location.pathname === "/elementary" ? "nav-link active" : "nav-link"}>
-          Elementary
+        <Link to="/subjects" className={window.location.pathname === "/subjects" ? "nav-link active" : "nav-link"}>
+          Subjects
         </Link>
       </li>
       
@@ -30,12 +40,13 @@ function Navbar() {
       </li>
 
       <li className="nav-item">
-        <Link to="/user" className={window.location.pathname === "/user" ? "nav-link active" : "nav-link"}>
-          User
+        <Link to="/dashboard" className={window.location.pathname === "/dashboard" ? "nav-link active" : "nav-link"}>
+          Dashboard
         </Link>
       </li>
     
     </ul>
+    </div>
   );
 }
 

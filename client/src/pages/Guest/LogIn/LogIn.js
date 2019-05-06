@@ -8,7 +8,7 @@ import API from "../../../utils/API";
 
 import { TextInput, Button, Icon, Row, Col, Container } from 'react-materialize'
 
-class Home extends Component {
+class LogIn extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -112,4 +112,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default LogIn;

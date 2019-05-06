@@ -13,7 +13,6 @@
  } else {
    var sequelize = new Sequelize(config.database, config.username, config.password, config);
  }
- console.log("checking models/index 1")
  
  //fs
  //  .readdirSync(__dirname)
@@ -25,7 +24,6 @@
  //    db[model.name] = model;
  //  });
  
- console.log("checking models/index")
  
  
  Object.keys(db).forEach(modelName => {
