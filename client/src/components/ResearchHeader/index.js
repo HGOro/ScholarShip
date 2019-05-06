@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
 const Div = styled.div`
   font-size: 16px;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: 'Wendy One', sans-serif;
   padding: 20px;
   justify-content: center;
   flex-direction: column;
@@ -20,7 +20,7 @@ const Div = styled.div`
 
 const Button = styled.button`
   font-size: 16px;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: 'Wendy One', sans-serif;
   padding: 8px;
   margin: 10px;
 `
@@ -29,7 +29,7 @@ const H1 = styled.h1`
   text-align: center;
   padding: 10px;
   font-size: 32px;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: 'Wendy One', sans-serif;
 `
 
 const ResearchHeader = (props) => {
