@@ -51,7 +51,7 @@ module.exports = function(sequelize, DataTypes) {
 
     });
 
-    // accociations ======================
+    // associations ======================
 
     Quiz.associate = function(models){
         Quiz.belongsTo(models.User, {
