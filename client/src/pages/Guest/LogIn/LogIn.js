@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Home.css'
 
 import API from "../../../utils/API";
 //import Panel from '../../../components/Panel'
