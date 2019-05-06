@@ -2,7 +2,6 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const Article = require("../models/Article")
 const db = require("../models")
-const Wiki = require("../models/Wiki")
 
 exports.all = async function (req, res) {
    try {

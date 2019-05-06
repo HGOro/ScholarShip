@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import ArticleEach from "../components/ArticleEach"
 import ResearchHeader from "../components/ResearchHeader";
-// import Wiki from "../components/WikiBtn";
+
 // import Input from "../components/Input"
 // import SaveArticleBtn from "../components/SaveArticleBtn";
 // import SaveNotesBtn from "../components/SaveNotesBtn";
 //import ReadNotesBtn from "../components/ReadNotesBtn"
 // import Scrape from "../components/Scrape";
-// import Wiki from "../components/WikiBtn";
+
 // import Results from "../components/Results"
 
 
