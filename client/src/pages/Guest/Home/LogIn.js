@@ -87,12 +87,12 @@ class LogIn extends Component {
           <div>
             <form ref="submitForm" onClick={this.resetError.bind(this)}>
               <p id="form-error">{this.state.message}</p>
-              <input icon="mail_outline" label="Email" name="email" validate label="Email" email onChange={this.handleInputChange} minLength="4" />
+              <input icon="mail_outline" label="Email" name="email" validate email onChange={this.handleInputChange} minLength="4" />
               <input icon="lock_outline" password label="Password" name="local_pw" onChange={this.handleInputChange} minLength="6" required/>
-              <button style={{marginRight: '5px'}} onClick={this.handleSubmitAccess} >
+              <button  waves="light" style={{marginRight: '5px'}} onClick={this.handleSubmitAccess} >
                 LOGIN
               </button>
-              <button waves="light" style={{marginRight: '5px'}} onClick={this.handleSubmitAccess}>
+              <button   style={{marginRight: '5px'}} onClick={this.handleSubmitAccess}>
                 SIGNUP
               </button>
             </form>

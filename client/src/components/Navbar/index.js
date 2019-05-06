@@ -1,48 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./logo.png";
+import styles from "./style.css";
 
 
 function Navbar() {
   return (
     <div>
 
-    <ul className="nav nav-tabs">
+    <ul class="nav">
       
-      <li className="nav-item">
-        <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
-        </Link>
+      <li class="nav-item">
+        <a href="/" class="link">Home</a>
       </li>
 
-      <li className="nav-item">
-        <Link to="/login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
-          Log In
-        </Link>
+      <li class="nav-item">
+        <a href="/login" class="link">Log In</a>
       </li>
       
-      <li className="nav-item">
-        <Link to="/subjects" className={window.location.pathname === "/subjects" ? "nav-link active" : "nav-link"}>
-          Subjects
-        </Link>
+      <li class="nav-item">
+        <a href="/subjects" class="link">Subjects</a>
       </li>
       
-      <li className="nav-item">
-        <Link to="/research" className={window.location.pathname === "/research" ? "nav-link active" : "nav-link"}>
-          Research
-        </Link>
+      <li class="nav-item">
+        <a href="/research" class="link">Research</a>
       </li>
       
-      <li className="nav-item">
-        <Link to="/myproject" className={window.location.pathname === "/myproject" ? "nav-link active" : "nav-link"}>
-          My Project
-        </Link>
+      <li class="nav-item">
+        <a href="/myproject" class="link">My Project</a>
       </li>
 
-      <li className="nav-item">
-        <Link to="/dashboard" className={window.location.pathname === "/dashboard" ? "nav-link active" : "nav-link"}>
-          Dashboard
-        </Link>
+      <li class="nav-item">
+        <a href="/dashboard" class="link"> dashboard</a>
       </li>
     
     </ul>

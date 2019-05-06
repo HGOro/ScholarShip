@@ -1,0 +1,20 @@
+.nav {
+    background-color:whitesmoke;
+}
+
+.nav-item {
+    background-color:  rgba(255, 61, 61);
+    
+    color: #777777;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .4s;
+    padding: 0 5%;
+}
+
+
+
+.link {
+    text-decoration: none;
+    color: black;
+}
