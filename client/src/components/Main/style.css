@@ -14,12 +14,13 @@ Dark green: #28b485
 }
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: 'Wendy One', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
     color: #777777;
     padding: 30px;
+    padding-top: 0;
 }
 
 .header {

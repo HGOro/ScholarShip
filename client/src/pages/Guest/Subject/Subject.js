@@ -55,7 +55,7 @@ class Subject extends Component {
                                 <ul>
                                     {subject.quizzes.map((quiz, i)=>(
                                         <li key={i}>
-                                            <Link to={quiz.url}>{quiz.text}</Link>
+                                           <Link to={quiz.url}>{quiz.text}</Link>
                                         </li>
                                     ))}
                                 </ul>
