@@ -29,10 +29,10 @@ body {
         to right bottom,
         rgba(24, 43, 97, 0.8),
         rgba(37, 205, 247, 0.8 )),
-     url(../img/hero.jpg);
+     url(./hero.jpg);
      background-size: cover; 
      background-position: top;
-     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 95%);
      position: relative;
 }
 
@@ -43,7 +43,9 @@ body {
 }
 
 .logo {
-    height: 35px;
+    height: 120px; 
+    background-position: top;
+
 }
 
 
