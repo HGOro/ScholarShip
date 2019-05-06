@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from "styled-components"
 
-import { createGlobalStyle } from "styled-components";
-const GlobalStyles = createGlobalStyle`
-  body {
-    @import url("https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet");
-    font-family: 'Coming Soon', cursive;
-  }`
+// import { createGlobalStyle } from "styled-components";
+// const GlobalStyles = createGlobalStyle`
+//   body {
+//     @import url("https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet");
+//     font-family: 'Coming Soon', cursive;
+//   }`
 
 
 const Div = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Wendy One', sans-serif;
   padding: 20px;
   justify-content: center;
@@ -19,7 +19,7 @@ const Div = styled.div`
 `
 
 const Button = styled.button`
-  font-size: 16px;
+  font-size: 24px;
   font-family: 'Wendy One', sans-serif;
   padding: 8px;
   margin: 10px;
@@ -28,9 +28,10 @@ const Button = styled.button`
 const H1 = styled.h1`
   text-align: center;
   padding: 10px;
-  font-size: 32px;
   font-family: 'Wendy One', sans-serif;
 `
+
+
 
 const ResearchHeader = (props) => {
   

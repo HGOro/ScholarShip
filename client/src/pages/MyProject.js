@@ -1,6 +1,27 @@
 import React, { Component } from "react";
+import styled from "styled-components"
 //import SavedResults from "../components/SavedResults"
 // import ReadNotesBtn from "../components/ReadNotesBtn"
+
+const H1 = styled.h1`
+  text-align: center;
+  font-family: 'Wendy One', sans-serif;
+  padding: 20px;
+`
+
+const Button = styled.button`
+  font-size: 24px;
+  font-family: 'Wendy One', sans-serif;
+  padding: 8px;
+  margin: 10px;
+`
+
+const P = styled.p`
+  font-family: 'Wendy One', sans-serif;
+  padding: 4px;
+  font-size: 22px;
+`
+
 
 class MyProject extends Component {
   state = {
@@ -42,14 +63,14 @@ class MyProject extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-center">My Project</h1>
+        <H1>My Project</H1>
 
-        <button onClick={this.handleViewMaterialsBtnClick}>View Saved Materials</button>
+        <Button onClick={this.handleViewMaterialsBtnClick}>View Saved Materials</Button>
 
         {this.state.results.map(result => {
           return (
             <div key={result._id} >
-              <p>{result.title}
+              <P>{result.title}
                 <a href={result.href} target="_blank">Read</a>
                 {result.comments.map(
                   comment => {
@@ -58,7 +79,7 @@ class MyProject extends Component {
                     )
                   }
                 )}
-              </p>
+              </P>
             </div>
 
           )
