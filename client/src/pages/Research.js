@@ -106,17 +106,7 @@ class Research extends Component {
       <div>
 
         <ResearchHeader handleScrapeBtnClick={this.handleScrapeBtnClick} />
-        {/* <h1 className="text-center">Research My Project</h1>
-
-        <button className="scrape" onClick={this.handleScrapeBtnClick}>News for Kids.net</button>
-        <button id="scrape2">PBS.org</button>
-        <button id="scrape3">CNN Student</button>
-        <button id="scrape4">TIME for Kids</button>
-        <button id="scrape4">Scholastic News Online</button>
-        
-        <p>Wikipedia: <input className="userinput"></input><button className="searchWiki">Search</button></p> */}
-
-
+       
         {this.state.results.map(result => {
           return (
             <ArticleEach
@@ -125,25 +115,9 @@ class Research extends Component {
               clickHandler={this.handleSaveArticleBtnClick}
               saveNotesHandler={this.handleSaveNotesBtnClick}
             />
-
-            /*
-            <div key={result._id}> 
-              <p >
-                <a href={result.href} target="_blank" rel="noopener noreferrer">{result.title}</a>
-              </p>
- 
-              {result.isSave? false : <SaveArticleBtn clickHandler={this.handleSaveArticleBtnClick} articleId={result._id} />}
- 
-              <SaveNotesBtn clickHandler={this.handleSaveNotesBtnClick} articleId={result._id} />
-                
-            </div>
-            */
           )
         })}
-        {/*
-        <Input />
-        <WikiBtn/> 
-        */}
+        
       </div>
     );
   }
