@@ -1,10 +1,9 @@
 import React from "react";
-import { Footer } from 'react-materialize';
 
 import "./footer.css";
 
 const Footing = (props) => (
-    <Footer
+    <footer
         copyrights="2019 Copyright ScholarShip"
         className="blue lighten-1"
     >
@@ -14,7 +13,7 @@ const Footing = (props) => (
         <p className="grey-text text-lighten-4">
         A tool to help navigate the rough seas of school. 
         </p>
-    </Footer>
+    </footer>
 );
 
 export default Footing;

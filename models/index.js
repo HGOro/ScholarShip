@@ -1,6 +1,6 @@
 'use strict';
 
- var fs = require("fs");
+ //var fs = require("fs");
  var path = require("path");
  var Sequelize = require("sequelize");
  var basename = path.basename(__filename);
@@ -31,9 +31,9 @@
      db[modelName].associate(db);
    }
  });
- 
- db.sequelize = sequelize;
- db.sequelize = sequelize;
+ //
+ //db.sequelize = sequelize;
+ //db.sequelize = sequelize;
 
 module.exports = {
   Article: require("./Article"),

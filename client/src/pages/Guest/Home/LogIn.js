@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-
 import API from "../../../utils/API";
 //import Panel from '../../../components/Panel'
 //import Input from '../../../components/Input'
-//import Button from '../../../components/Button'
-
-import { TextInput, Button, Icon, Row, Col, Container } from 'react-materialize'
+//import button from '../../../components/button'
 
 class LogIn extends Component {
     constructor(props){
@@ -85,19 +82,19 @@ class LogIn extends Component {
     
       renderLoginForm(){
         return(
-          <Container>
+          <container>
             <form ref="submitForm" onClick={this.resetError.bind(this)}>
               <p id="form-error">{this.state.message}</p>
-              <TextInput icon="mail_outline" label="Email" name="email" validate label="Email" email onChange={this.handleInputChange} minLength="4" />
-              <TextInput icon="lock_outline" password label="Password" name="local_pw" onChange={this.handleInputChange} minLength="6" required/>
-              <Button disabled={this.state.buttonStatus} waves="light" style={{marginRight: '5px'}} onClick={this.handleSubmitAccess} >
+              <input icon="mail_outline" label="Email" name="email" validate label="Email" email onChange={this.handleInputChange} minLength="4" />
+              <input icon="lock_outline" password label="Password" name="local_pw" onChange={this.handleInputChange} minLength="6" required/>
+              <button disabled={this.state.buttonStatus} waves="light" style={{marginRight: '5px'}} onClick={this.handleSubmitAccess} >
                 LOGIN
-              </Button>
-              <Button className="teal accent-3" disabled={this.state.buttonStatus} waves="light" style={{marginRight: '5px'}} onClick={this.handleSubmitAccess}>
+              </button>
+              <button className="teal accent-3" disabled={this.state.buttonStatus} waves="light" style={{marginRight: '5px'}} onClick={this.handleSubmitAccess}>
                 SIGNUP
-              </Button>
+              </button>
             </form>
-          </Container>
+          </container>
         )
       }
 

@@ -1,7 +1,35 @@
-import React, {Component} from 'react'
-import { Card, Button, Row, Col, CardTitle, Container } from 'react-materialize';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-import "./Subject.css"
+import "./Subject.css";
+import styled from "styled-components";
+import {
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    CardImageHeader,
+    CardText,
+    CardTitle,
+  } from 'styled-card-component';
+   
+  
+
+  const MathCard = (props) => (
+    <Card>
+      <CardImageHeader src="./img/art" />
+      <CardBody>
+        <CardText>
+          Math
+        </CardText>
+        <CardFooter>
+          Facts, Quizzes, and More
+        </CardFooter>
+      </CardBody>
+    </Card>
+  );
+
+
+
 
 class Subject extends Component {
     constructor(props){
@@ -45,10 +73,10 @@ class Subject extends Component {
 
     render(){
         return(
-            <Container id="subjects">
-                <Row>
+            <container id="subjects">
+                <row>
                     {this.state.subjects.map((subject, i)=>(
-                        <Col m={6} s={12} l={4} key={i} >
+                        <col m={6} s={12} l={4} key={i} >
                         {(subject.name === "Math") ? 
                             <Card header={<img src={`./assets/img/subjects/${subject.icon}`} />} title={subject.name} 
                             reveal={
@@ -70,11 +98,11 @@ class Subject extends Component {
                                 
                             </Card>
                         }
-                        </Col>
+                        </col>
                     ))}
                     
-                </Row>
-            </Container>
+                </row>
+            </container>
         )
     }
 }

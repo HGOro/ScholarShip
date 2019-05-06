@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Navbar, NavItem, Button } from 'react-materialize';
 import API from '../../utils/API'
 
 //import "./Footer.css";
@@ -29,50 +28,50 @@ class Header extends Component{
 
     guestNav = ()=>{
         return(
-            <Navbar brand={<a />} alignLinks="right" className="blue lighten-1">
-                <NavItem href="/">
+            <navbar brand={<a />} alignLinks="right" className="blue lighten-1">
+                <navItem href="/">
                     Home
-                </NavItem>
-                <NavItem>
+                </navItem>
+                <navItem>
                     Guest
-                </NavItem>
-                <NavItem href="/login">
+                </navItem>
+                <navItem href="/login">
                     Log In
-                </NavItem>
-                <NavItem href="/subjects">
+                </navItem>
+                <navItem href="/subjects">
                     Subjects
-                </NavItem>
-                <NavItem href="/research">
+                </navItem>
+                <navItem href="/research">
                     Research
-                </NavItem>
-            </Navbar> 
+                </navItem>
+            </navbar> 
         )   
     }
 
     userNav = ()=>{
         return(
-            <Navbar brand={<a />} alignLinks="right" className="blue lighten-1">
-                <NavItem href="/">
+            <navbar brand={<a />} alignLinks="right" className="blue lighten-1">
+                <navItem href="/">
                     Home
-                </NavItem>
-                <NavItem href="/subjects">
+                </navItem>
+                <navItem href="/subjects">
                     Subjects
-                </NavItem>
-                <NavItem href="/research">
+                </navItem>
+                <navItem href="/research">
                     Research
-                </NavItem>
-                <NavItem href="/myproject">
+                </navItem>
+                <navItem href="/myproject">
                     My Project
-                </NavItem>
-                <NavItem href="/dashboard">
+                </navItem>
+                <navItem href="/dashboard">
                     Dashboard
-                </NavItem>
-                <NavItem>
-                    <Button onClick={this.handleLogout}>
+                </navItem>
+                <navItem>
+                    <button onClick={this.handleLogout}>
                         Logout
-                    </Button>
-                </NavItem>
-            </Navbar>   
+                    </button>
+                </navItem>
+            </navbar>   
         ) 
     }
 

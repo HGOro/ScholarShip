@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Row, Container, Range, Icon, Col, Button } from 'react-materialize';
 import Chart from '../../../components/Chart/Chart';
 
 
@@ -137,21 +136,15 @@ class Mathematics extends Component {
 
     userQuizCount = ()=> {
         return(
-            <Row>
-                <Col s={12}>
+            <row>
+                <col s={12}>
                     <form>
-                        <Icon>
-                            blur_on
-                        </Icon>
                         <span>Select how many problems you would like to solve?</span>
-                        <Icon>
-                            blur_on
-                        </Icon>
-                        <Range min="5" max="50" step="5" name="totalQuestions" required onChange={this.countRangeChange}/>
-                        <Button onClick={this.countRangeSubmit} type="submit" disabled={this.state.rangeDisable}>Submit</Button>
+                        <range min="5" max="50" step="5" name="totalQuestions" required onChange={this.countRangeChange}/>
+                        <button onClick={this.countRangeSubmit} type="submit" disabled={this.state.rangeDisable}>Submit</button>
                     </form>
-                </Col>
-            </Row>
+                </col>
+            </row>
         )
     }
 
@@ -202,27 +195,27 @@ class Mathematics extends Component {
             if(this.state.right){
                 return <div>
                 <h1>You got it right!</h1>
-                <Button onClick={this.handleNextQuestion}>Next Question</Button>
+                <button onClick={this.handleNextQuestion}>Next Question</button>
                 
                 </div>
             } else {
                 return <div>
                 <h1>You got it wrong!</h1>
-                <Button onClick={this.handleNextQuestion}>Next Question</Button>
+                <button onClick={this.handleNextQuestion}>Next Question</button>
                 
                 </div>
             }
             
         }
         else if(this.state.questionCount>this.state.totalQuestions){
-            return <Container>
+            return <container>
                         <div>
                             <h1>Quiz Completed!</h1>
                             <h2>Correct:{this.state.totalRight}</h2>
                             <h2>Wrong:{this.state.totalWrong}</h2>
                         </div>
                         <Chart chartData={this.state.chartData} />
-                    </Container>
+                    </container>
         }   
     }
 
@@ -237,7 +230,7 @@ class Mathematics extends Component {
             <p>Get ready to multiply!</p>
             <p>Click Start Quiz, then type in your answer and press enter for each multiplication problem.</p>
             <p>You will have {this.state.totalQuestions * 5} seconds to finish this quiz.</p>
-            <Button onClick={this.handleStartClick}>Start Quiz</Button>
+            <button onClick={this.handleStartClick}>Start Quiz</button>
         </div>
     }
 
@@ -247,10 +240,10 @@ class Mathematics extends Component {
 
     render(){
         return(
-            <Container id="math">
+            <container id="math">
                 {(this.state.selectedQuiz) ? this.startQuiz() : this.userQuizCount() }
 
-            </Container>
+            </container>
         )
     }
 }
