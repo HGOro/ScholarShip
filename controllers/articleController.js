@@ -84,9 +84,12 @@ exports.readComment = async function (req, res) {
 
 
 exports.readArticles = async function (req, res) {
-   let toread
+   console.log("readArticles")
+   // res.send('readArticles')
+   // res.json({message: 'OK'});
+   let toread;
    try {
-      toread = await db.Article.findAll({ isSave: true });
+      toread = await db.Article.find({ isSave: true });
       res.json(toread);
    } catch (e) {
       res.send(e)

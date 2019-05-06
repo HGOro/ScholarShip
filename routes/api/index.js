@@ -15,6 +15,6 @@ router.use("/quiz", QuizRoutes);
 //end Hernan added
 
 //research routes
-router.use("/research", researchRoutes);
+// router.use("/research", researchRoutes);
 
 module.exports = router;
