@@ -4,10 +4,12 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Elementary from "./pages/Elementary";
+import Subject from "./pages/Guest/Subject/Subject";
 import Research from "./pages/Research";
 import MyProject from "./pages/MyProject";
-import User from "./pages/User";
+import Dashboard from "./pages/User/Dashboard/Dashboard";
+import Mathematics from "./pages/Guest/Subject/Mathematics"
+import LogIn from './pages/Guest/Home/LogIn';
 
 function App() {
   return (
@@ -15,10 +17,12 @@ function App() {
       <div>
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/elementary" component={Elementary} />
+        <Route exact path="/subjects" component={Subject} />
+        <Route exact path="/math" component={Mathematics} />
+        <Route exact path="/login" component={LogIn} />
         <Route exact path="/research" component={Research} />
         <Route exact path="/myproject" component={MyProject} />
-        <Route path="/user" component={User} />
+        <Route path="/dashboard" component={Dashboard} />
       </div>
     </Router>
   );

@@ -9,16 +9,35 @@ class Subject extends Component {
         this.state = {
             subjects: [
                 {
-                    name: "math",
-                    info: "huhuhu",
-                    quizzes: ["/math/quiz"],
+                    name: "Math",
+                    info: "Facts, Quizzes, and More",
+                    quizzes: [{url:"/math", text:"Times Tables"}],
                     icon: "math.png"
                 },
                 {
-                    name: "science",
-                    info: "huhuhu",
-                    quizzes: ["/math/quiz"],
-                    icon: "math.png"
+                    name: "Reading",
+                    info: "Words, Stories, and More",
+                    icon: "reading.png"
+                },
+                {
+                    name: "Writing",
+                    info: "Build Words and Sentences",
+                    icon: "writing.png"
+                },
+                {
+                    name: "Science",
+                    info: "How the World Works",
+                    icon: "science.png"
+                },
+                {
+                    name: "History",
+                    info: "Past to Present",
+                    icon: "history.png"
+                },
+                {
+                    name: "Art",
+                    info: "Expression and Exploration",
+                    icon: "art.png"
                 }
             ]
         }
@@ -30,12 +49,13 @@ class Subject extends Component {
                 <Row>
                     {this.state.subjects.map((subject, i)=>(
                         <Col m={6} s={12} l={4} key={i} >
-                        {(subject.name === "math") ? 
-                            <Card header={<img src={`./assets/img/subjects/${subject.icon}`} />} title={subject.name} reveal={
+                        {(subject.name === "Math") ? 
+                            <Card header={<img src={`./assets/img/subjects/${subject.icon}`} />} title={subject.name} 
+                            reveal={
                                 <ul>
                                     {subject.quizzes.map((quiz, i)=>(
                                         <li key={i}>
-                                            <Link to={quiz}>Multiplication Speedtest</Link>
+                                            <Link to={quiz.url}>{quiz.text}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -45,12 +65,11 @@ class Subject extends Component {
                                 </p>
                             </Card>
                             : 
-                            <Card header={<img src={`./assets/img/subjects/${subject.icon}`} />} title={subject.name}>
+                            <Card header={<img src={`./assets/img/subjects/${subject.icon}`} />} title={subject.name} reveal={<p>Coming Soon!</p>} >
                                 <p>{subject.info}</p>
-                                <p>Coming Soon!</p>
+                                
                             </Card>
                         }
-                            
                         </Col>
                     ))}
                     
