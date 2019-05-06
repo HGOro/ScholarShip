@@ -137,39 +137,39 @@ exports.scrapeArticles = async function (req, res) {
       })
 }
 
-exports.wikiSearch = async function (req, res) {
+// exports.wikiSearch = async function (req, res) {
 
-   let searchTerm = (req.body.input);
-   console.log(req.body);
+//    let searchTerm = (req.body.input);
+//    console.log(req.body);
 
-   try {
-      var url = `http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchTerm}&format=json`
-      console.log(url)
+//    try {
+//       var url = `http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchTerm}&format=json`
+//       console.log(url)
 
-      var response = await axios.get(url)
-      console.log(response.data.query.search)
+//       var response = await axios.get(url)
+//       console.log(response.data.query.search)
 
-      wikiResults = (response.data.query.search)
-      res.json(wikiResults);
+//       wikiResults = (response.data.query.search)
+//       res.json(wikiResults);
 
-      for (let i = 0; i < wikiResults.length; i++) {
-         var title = wikiResults[i].title;
-         var snippet = wikiResults[i].snippet;
-         var pageid = wikiResults[i].pageid;
+//       for (let i = 0; i < wikiResults.length; i++) {
+//          var title = wikiResults[i].title;
+//          var snippet = wikiResults[i].snippet;
+//          var pageid = wikiResults[i].pageid;
 
-         var wiki = new Wiki({
-            title: title,
-            snippet: snippet,
-            pageid: pageid
-         });
-         console.log(wikiResults);
-         wiki.save();
-      }
-      res.send(wiki)
-      console.log("saved wiki!");
+//          var wiki = new Wiki({
+//             title: title,
+//             snippet: snippet,
+//             pageid: pageid
+//          });
+//          console.log(wikiResults);
+//          wiki.save();
+//       }
+//       res.send(wiki)
+//       console.log("saved wiki!");
 
-   } catch (e) {
-      console.log("error", e)
-      return res.send(e)
-   }
-}
+//    } catch (e) {
+//       console.log("error", e)
+//       return res.send(e)
+//    }
+// }
