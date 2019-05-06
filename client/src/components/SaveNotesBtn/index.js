@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from "styled-components"
 
 const Div = styled.div`
-  font-size: 16px;
-  font-family: Georgia, Times, "Times New Roman", serif; 
+  font-size: 18px;
+  ont-family: 'Wendy One', sans-serif; 
 `
 
 const SaveNotesBtn = (props) => {
