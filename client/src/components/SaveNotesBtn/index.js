@@ -3,7 +3,15 @@ import styled from "styled-components"
 
 const Div = styled.div`
   font-size: 18px;
-  ont-family: 'Wendy One', sans-serif; 
+  font-family: 'Wendy One', sans-serif; 
+`
+
+const Button = styled.button`
+  font-family: 'Wendy One', sans-serif;
+  font-size: 20px;
+  color: black;
+  padding: 4px;
+  
 `
 
 const SaveNotesBtn = (props) => {
@@ -28,7 +36,7 @@ const SaveNotesBtn = (props) => {
         cols="35"
       />
 
-       <button onClick={clickHandler}>Save Notes</button>
+       <Button onClick={clickHandler}>Save Notes</Button>
      </Div>
 
     
