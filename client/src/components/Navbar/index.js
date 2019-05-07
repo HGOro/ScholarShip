@@ -11,27 +11,27 @@ function Navbar() {
     <ul class="nav">
       
       <li class="nav-item">
-        <a href="/" class="link">Home</a>
+        <Link to="/" class="link">Home</Link>
       </li>
 
       <li class="nav-item">
-        <a href="/login" class="link">Log In</a>
+        <Link to="/login" class="link">Log In</Link>
       </li>
       
       <li class="nav-item">
-        <a href="/subjects" class="link">Subjects</a>
+        <Link to="subjects" class="link">Subjects</Link>
       </li>
       
       <li class="nav-item">
-        <a href="/research" class="link">Research</a>
+        <Link to="/research" class="link">Research</Link>
       </li>
       
       <li class="nav-item">
-        <a href="/myproject" class="link">My Project</a>
+        <Link to="/myproject" class="link">My Project</Link>
       </li>
 
       <li class="nav-item">
-        <a href="/dashboard" class="link"> dashboard</a>
+        <Link to="/dashboard" class="link"> dashboard</Link>
       </li>
     
     </ul>
