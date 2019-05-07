@@ -23,6 +23,15 @@ const IFrameDiv = styled.div`
   align-items: center;
 `
 
+const P = styled.p`
+  font-family: 'Wendy One', sans-serif;
+  font-size: 24px;
+  color: black;
+  text-shadow: 1px 1px gray;
+  padding: 6px;
+
+`
+
 const ArticleEach = (props) => (
   <Div>
     <IFrameDiv>
@@ -32,7 +41,7 @@ const ArticleEach = (props) => (
         height="200"
         src={props.result.href}>
       </iframe>
-      <div><a href={props.result.href} target="_blank" rel="noopener noreferrer">{props.result.title}</a></div>
+      <div><P>{props.result.title}</P></div>
     </IFrameDiv>
 
     <div>

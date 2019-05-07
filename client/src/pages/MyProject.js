@@ -5,8 +5,10 @@ import styled from "styled-components"
 
 const H1 = styled.h1`
   text-align: center;
-  font-family: 'Wendy One', sans-serif;
   padding: 20px;
+  font-family: 'Wendy One', sans-serif;
+  color: black;
+  font-size: 44px;
 `
 
 const Button = styled.button`
@@ -21,6 +23,7 @@ const H3 = styled.h3`
   padding: 6px;
   font-size: 22px;
   margin-left: 5px;
+  color: black;
 `
 
 const P = styled.p`
@@ -28,6 +31,7 @@ const P = styled.p`
   padding: 6px;
   font-size: 22px;
   margin-left: 8px;
+  color: black;
 `
 
 const A = styled.a`

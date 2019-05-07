@@ -29,6 +29,7 @@ const H1 = styled.h1`
   text-align: center;
   padding: 10px;
   font-family: 'Wendy One', sans-serif;
+  color: black;
 `
 
 
