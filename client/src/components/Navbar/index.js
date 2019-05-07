@@ -19,7 +19,7 @@ function Navbar() {
       </li>
       
       <li class="nav-item">
-        <Link to="subjects" class="link">Subjects</Link>
+        <Link to="/subjects" class="link">Subjects</Link>
       </li>
       
       <li class="nav-item">
@@ -31,7 +31,7 @@ function Navbar() {
       </li>
 
       <li class="nav-item">
-        <Link to="/dashboard" class="link"> dashboard</Link>
+        <Link to="/dashboard" class="link">Dashboard</Link>
       </li>
     
     </ul>
