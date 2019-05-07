@@ -40,7 +40,7 @@ const ResearchHeader = (props) => {
   return (
    
       <Div>
-        <H1>Research My Project</H1>
+        <H1>Research Portal</H1>
 
         <Button onClick={props.handleScrapeBtnClick}>News for Kids.net</Button>
         <Button>PBS.org</Button>
