@@ -26,8 +26,8 @@
    }
  });
  
- db.sequelize = sequelize;
- db.sequelize = sequelize;
+ //db.sequelize = sequelize;
+ //db.sequelize = sequelize;
 
 module.exports = {
   Article: require("./Article"),
