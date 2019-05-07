@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const Article = require("../models/Article")
-//const db = require("../models")
+const db = require("../models")
 
 exports.all = async function (req, res) {
    try {
