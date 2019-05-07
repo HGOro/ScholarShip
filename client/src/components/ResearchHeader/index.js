@@ -32,6 +32,13 @@ const H1 = styled.h1`
   color: black;
 `
 
+const P = styled.p`
+  font-size: 24px;
+  font-family: 'Wendy One', sans-serif;
+  padding: 8px;
+  margin: 10px;
+`
+
 
 
 const ResearchHeader = (props) => {
@@ -48,7 +55,7 @@ const ResearchHeader = (props) => {
         <Button>TIME for Kids</Button>
         <Button>Scholastic News Online</Button>
 
-        <p>Wikipedia: <input className="userinput" /><button className="searchWiki">Search</button></p>
+        <P>Wikipedia: <input className="userinput" /><Button className="searchWiki">Search</Button></P>
 
       </Div> 
       

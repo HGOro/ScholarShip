@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const H1 = styled.h1`
   text-align: center;
-  padding: 20px;
+  padding: 26px;
   font-family: 'Wendy One', sans-serif;
   color: black;
   font-size: 44px;
@@ -15,7 +15,7 @@ const Button = styled.button`
   font-size: 24px;
   font-family: 'Wendy One', sans-serif;
   padding: 8px;
-  margin: 10px;
+  margin-left: 24px;
 `
 
 const H3 = styled.h3`
